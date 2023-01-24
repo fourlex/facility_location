@@ -190,11 +190,11 @@ def geometric_median_sphere(
             break
 
     # check the guess and its antipode
-    ya = np.array([-y[0], np.pi + y[1]])
-    w_y = np.average(np.linalg.norm(a - y, axis=1), axis=0, weights=w)
-    w_ya = np.average(np.linalg.norm(a - ya, axis=1), axis=0, weights=w)
-    if w_ya < w_y:
-        y = ya
+    y_anti = np.array([-y[0], np.pi + y[1]])
+    w_y = np.average(great_circle_dists(y, a), axis=0, weights=w)
+    w_y_anti = np.average(great_circle_dists(y_anti, a), axis=0, weights=w)
+    if w_y_anti < w_y:
+        y = y_anti
 
     if units == 'degrees':
         y = y * 180 / np.pi

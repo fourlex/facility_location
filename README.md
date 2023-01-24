@@ -1,4 +1,7 @@
 # facility_location
+
+![Demo image](demo.png)
+
 Demo of facility location methods:
 * Planar or spherical weighted geometric median.
 * Planar 1-center (aka minmax) problem.
